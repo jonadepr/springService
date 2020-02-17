@@ -26,13 +26,13 @@ public class MainController {
 
     @GetMapping("/time") // escucho al GET en /time
     @ResponseBody // haré un body html para devolver la página completa
-    public String time1() { // método para devolver un string para responsebody
+    public String hello() { // método para devolver un string para responsebody
         return helloService.hola();
     }
 
     @GetMapping("/timesingle") // escucho al GET en /timesingle
     @ResponseBody // haré un body html para devolverlo bien
-    public String time() { // método para devolver un string para responsebody
+    public String timesingle() { // método para devolver un string para responsebody
         return timeService.time();
     }
 
