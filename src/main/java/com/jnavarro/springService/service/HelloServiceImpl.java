@@ -18,15 +18,14 @@ public class HelloServiceImpl implements HelloService{
 
     private String saludo;
 
-    private Calendar c = new GregorianCalendar();
-
     @Override
     public String hola() {
-        return saludo + miNombre + " " + c.getTime().toString();
+        Calendar c2 = new GregorianCalendar();
+        return saludo + miNombre + " " + c2.getTime().toString(); // El servicio está activo y crea c2 al tiempo que actualiza la página
     }
 
     public HelloServiceImpl() {
-        
-        saludo = "Hola holita "+c.getTime().toString()+" ";
+        Calendar c = new GregorianCalendar();
+        saludo = "Hola holita "+c.getTime().toString()+" "; //c se coge en tiempo de compilación y no de ejecución
     }
 }

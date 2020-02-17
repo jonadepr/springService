@@ -1,6 +1,7 @@
 package com.jnavarro.springservice.controller;
 
 import com.jnavarro.springservice.service.HelloService;
+import com.jnavarro.springservice.service.TimeService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,11 +20,20 @@ public class MainController {
     // Coger el servicio creado por spring
     @Autowired
     private HelloService helloService;
-    
+
+    @Autowired 
+    private TimeService timeService;
+
     @GetMapping("/time") // escucho al GET en /time
-    @ResponseBody // haré un body html para devolver bien
-    public String time() { // método para devolver un string para responsebody
+    @ResponseBody // haré un body html para devolver la página completa
+    public String time1() { // método para devolver un string para responsebody
         return helloService.hola();
+    }
+
+    @GetMapping("/timesingle") // escucho al GET en /timesingle
+    @ResponseBody // haré un body html para devolverlo bien
+    public String time() { // método para devolver un string para responsebody
+        return timeService.time();
     }
 
 }
