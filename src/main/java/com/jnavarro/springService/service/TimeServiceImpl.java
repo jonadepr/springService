@@ -22,6 +22,6 @@ public class TimeServiceImpl implements TimeService {
 
     public TimeServiceImpl() {
         Calendar c = new GregorianCalendar();
-        timeinicial = "Compilado a: "+c.getTime().toString()+" "; //c se coge en tiempo de compilación y no de ejecución
+        timeinicial = "Compilado a: "+c.getTime().toString()+". "; //c se coge en tiempo de compilación y no de ejecución
     }
 }
