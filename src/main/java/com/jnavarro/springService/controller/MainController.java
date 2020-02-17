@@ -6,6 +6,7 @@ import com.jnavarro.springservice.service.TimeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
@@ -21,6 +22,7 @@ public class MainController {
     @Autowired
     private HelloService helloService;
 
+    // Coger el servicio creado por spring
     @Autowired 
     private TimeService timeService;
 
@@ -34,6 +36,12 @@ public class MainController {
     @ResponseBody // haré un body html para devolverlo bien
     public String timesingle() { // método para devolver un string para responsebody
         return timeService.time();
+    }
+
+    @GetMapping("/edad") // escucho al GET en /timesingle
+    @ResponseBody // haré un body html para devolverlo bien
+    public String edad(@RequestParam("dia") String aday, @RequestParam("mes") String amonth, @RequestParam("anyo") String ayear ) { // método para devolver un string para responsebody
+        return timeService.edad(Integer.parseInt(aday), Integer.parseInt(amonth), Integer.parseInt(ayear));
     }
 
 }
