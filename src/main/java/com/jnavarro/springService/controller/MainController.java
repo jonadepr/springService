@@ -38,9 +38,12 @@ public class MainController {
         return timeService.time();
     }
 
-    @GetMapping("/edad") // escucho al GET en /timesingle
-    @ResponseBody // haré un body html para devolverlo bien
-    public String edad(@RequestParam("dia") String aday, @RequestParam("mes") String amonth, @RequestParam("anyo") String ayear ) { // método para devolver un string para responsebody
+    @GetMapping("/edad") // mapeamos en /edad, es un endpoint
+    @ResponseBody // haré un body html para devolverlo bien, será directamente la respuesta
+    public String edad(
+        @RequestParam("dia") String aday, 
+        @RequestParam("mes") String amonth, 
+        @RequestParam("anyo") String ayear ) { // método para devolver un string
         return timeService.edad(aday, amonth, ayear);
     }
 
