@@ -33,11 +33,11 @@ public class TimeServiceImpl implements TimeService {
 
     @Override
     public String edad(Integer aday, Integer amonth, Integer ayear) {
-        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        String fechaNacString = aday+"/"+amonth+"/"+ayear;
-        LocalDate fechaNac = LocalDate.parse(fechaNacString, fmt);
-        LocalDate ahora = LocalDate.now();
-        Period periodo = Period.between(fechaNac, ahora);
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy"); // Le doy el formato habitual de la fecha dd/MM/aaaa
+        String fechaNacString = aday+"/"+amonth+"/"+ayear; // Creo la fecha de nacimiento
+        LocalDate fechaNac = LocalDate.parse(fechaNacString, formato); // Asigno la fecha de nacimiento a LocalDate fechaNac
+        LocalDate ahora = LocalDate.now(); // Consigo la fecha actual
+        Period periodo = Period.between(fechaNac, ahora); // Calculo el periodo entre las dos fechas y abajo recupero por año, mes y dias
         return "Tu edad es: "+periodo.getYears()+" anyos, "+periodo.getMonths()+" meses y "+periodo.getDays()+" dias"; 
     }
 }
