@@ -32,7 +32,7 @@ public class TimeServiceImpl implements TimeService {
     }
 
     @Override
-    public String edad(Integer aday, Integer amonth, Integer ayear) {
+    public String edad(String aday, String amonth, String ayear) {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy"); // Le doy el formato habitual de la fecha dd/MM/aaaa
         String fechaNacString = aday+"/"+amonth+"/"+ayear; // Creo la fecha de nacimiento
         LocalDate fechaNac = LocalDate.parse(fechaNacString, formato); // Asigno la fecha de nacimiento a LocalDate fechaNac

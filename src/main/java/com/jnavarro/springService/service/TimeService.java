@@ -9,5 +9,5 @@ public interface TimeService {
 
     public String time();
 
-	public String edad(Integer aday, Integer amonth, Integer ayear);
+	public String edad(String aday, String amonth, String ayear);
 }

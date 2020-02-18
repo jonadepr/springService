@@ -41,7 +41,7 @@ public class MainController {
     @GetMapping("/edad") // escucho al GET en /timesingle
     @ResponseBody // haré un body html para devolverlo bien
     public String edad(@RequestParam("dia") String aday, @RequestParam("mes") String amonth, @RequestParam("anyo") String ayear ) { // método para devolver un string para responsebody
-        return timeService.edad(Integer.parseInt(aday), Integer.parseInt(amonth), Integer.parseInt(ayear));
+        return timeService.edad(aday, amonth, ayear);
     }
 
 }
